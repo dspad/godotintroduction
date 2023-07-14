@@ -6,6 +6,11 @@ const PLAYER_SPEED: int = 500
 # le azioni left, right, up, down, primary action e secondary action sono definite
 # all'interno del menu Project-> Project Settings -> Input Map
 
+func _ready():
+	#esempip di utilizz di $".." per chiamare il nodo padre
+	$"..".printAStringFromAnotherNode()
+	
+
 func _process(delta):
 	
 	#Gets an input vector by specifying four actions for the positive and negative X and Y axes.
