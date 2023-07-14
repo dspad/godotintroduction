@@ -17,4 +17,7 @@ func _process(delta):
 	
 	#controllo pressione azione
 	if Input.is_action_pressed("primary action"):
-		print("Shoot!")
+		print("Shoot Laser!")
+	
+	if Input.is_action_pressed("secondary action"):
+		print("Shoot Grenade!")
