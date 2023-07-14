@@ -3,6 +3,9 @@ extends CharacterBody2D
 #gestione input player
 const PLAYER_SPEED: int = 500
 
+var can_laser : bool = true
+var can_granade : bool = true
+
 # le azioni left, right, up, down, primary action e secondary action sono definite
 # all'interno del menu Project-> Project Settings -> Input Map
 
@@ -27,8 +30,10 @@ func _process(delta):
 	#position += direction * PLAYER_SPEED * delta
 	
 	#controllo pressione azione
-	if Input.is_action_pressed("primary action"):
+	if Input.is_action_pressed("primary action") and can_laser:
 		print("Shoot Laser!")
+		can_laser = false
 	
-	if Input.is_action_pressed("secondary action"):
+	if Input.is_action_pressed("secondary action") and can_granade:
 		print("Shoot Grenade!")
+		can_granade = false

@@ -18,3 +18,11 @@ extends Node2D
 
 func printAStringFromAnotherNode():
 	print("printAStringFromAnotherNode")
+
+
+#funzione creata in automatico selezionando l'Area2D -> Node -> Signals
+func _on_area_2d_body_entered(body):
+	print("body has entered " + body.name)
+
+func _on_area_2d_body_exited(body):
+	print("body has exited " + body.name)
