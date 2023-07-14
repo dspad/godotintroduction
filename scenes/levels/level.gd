@@ -20,9 +20,5 @@ func printAStringFromAnotherNode():
 	print("printAStringFromAnotherNode")
 
 
-#funzione creata in automatico selezionando l'Area2D -> Node -> Signals
-func _on_area_2d_body_entered(body):
-	print("body has entered " + body.name)
-
-func _on_area_2d_body_exited(body):
-	print("body has exited " + body.name)
+func _on_gate_player_entered_gate():
+	print("player has entered gate")

@@ -3,6 +3,7 @@ extends CharacterBody2D
 #gestione input player
 const PLAYER_SPEED: int = 500
 
+#variabiles
 var can_laser : bool = true
 var can_granade : bool = true
 
