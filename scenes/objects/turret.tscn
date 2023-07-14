@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://fokx5vqc1r4m"]
+
+[ext_resource type="Texture2D" uid="uid://dli4mdgvqrw36" path="res://graphics/car/turret.png" id="1_vrrfb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2t65e"]
+size = Vector2(143, 223)
+
+[node name="Turret" type="StaticBody2D"]
+
+[node name="TurretSprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_vrrfb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, -2.5)
+shape = SubResource("RectangleShape2D_2t65e")
