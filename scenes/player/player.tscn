@@ -15,3 +15,14 @@ texture = ExtResource("1_g7lge")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_v6gwo")
+
+[node name="TimerLaser" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="TimerGranade" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="timeout" from="TimerLaser" to="." method="_on_timer_laser_timeout"]
+[connection signal="timeout" from="TimerGranade" to="." method="_on_timer_granade_timeout"]

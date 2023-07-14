@@ -33,7 +33,16 @@ func _process(delta):
 	if Input.is_action_pressed("primary action") and can_laser:
 		print("Shoot Laser!")
 		can_laser = false
+		$TimerLaser.start()
 	
 	if Input.is_action_pressed("secondary action") and can_granade:
 		print("Shoot Grenade!")
 		can_granade = false
+		$TimerGranade.start()
+
+
+func _on_timer_laser_timeout():
+	can_laser = true
+
+func _on_timer_granade_timeout():
+	can_granade = true
