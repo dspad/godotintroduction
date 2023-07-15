@@ -1,11 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://crhtrnjh6xh08"]
+[gd_scene load_steps=4 format=3 uid="uid://crhtrnjh6xh08"]
 
 [ext_resource type="Texture2D" uid="uid://dgmahloabtctw" path="res://graphics/projectiles/grenade.png" id="1_l2pud"]
+
+[sub_resource type="GDScript" id="GDScript_ywwao"]
+script/source = "extends RigidBody2D
+"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y5ev1"]
 radius = 15.0
 
 [node name="Granade" type="RigidBody2D"]
+gravity_scale = 0.0
+script = SubResource("GDScript_ywwao")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.2, 0.2)
