@@ -9,7 +9,7 @@ var can_granade : bool = true
 
 #signals
 signal player_use_laser(laser_start_pos)
-signal player_use_granade
+signal player_use_granade(granade_start_pos)
 
 # le azioni left, right, up, down, primary action e secondary action sono definite
 # all'interno del menu Project-> Project Settings -> Input Map
@@ -49,7 +49,8 @@ func _process(delta):
 	
 	if Input.is_action_pressed("secondary action") and can_granade:
 		can_granade = false
-		player_use_granade.emit() #emetti il segnale
+		#emetti il segnale inviando la posizione di partenza della granata
+		player_use_granade.emit($GranadeSpawner.global_position) 
 		$TimerGranade.start()
 
 

@@ -36,5 +36,8 @@ position = Vector2(-9, 2)
 [node name="Marker2D3" type="Marker2D" parent="LaserSpawner"]
 position = Vector2(10, 2)
 
+[node name="GranadeSpawner" type="Node2D" parent="."]
+position = Vector2(0, -124)
+
 [connection signal="timeout" from="TimerLaser" to="." method="_on_timer_laser_timeout"]
 [connection signal="timeout" from="TimerGranade" to="." method="_on_timer_granade_timeout"]

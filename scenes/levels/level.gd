@@ -2,6 +2,7 @@ extends Node2D
 
 #variabile per creare istanze della scena
 var laser_scene : PackedScene = preload("res://scenes/projectile/laser.tscn")
+var granade_scene : PackedScene = preload("res://scenes/projectile/granade.tscn")
 
 #func _ready():
 #	$Logo.rotation_degrees = 90
@@ -27,8 +28,11 @@ func _on_gate_player_entered_gate():
 	print("player has entered gate")
 
 
-func _on_player_player_use_granade():
-	print("player drops a granade")
+func _on_player_player_use_granade(granade_start_pos):
+	#creo istanza scena granata e la piazzio nella position indicata dal $Player
+	var granade = granade_scene.instantiate()
+	granade.position = granade_start_pos
+	$Projectiles.add_child(granade)
 
 
 func _on_player_player_use_laser(laser_start_pos):
