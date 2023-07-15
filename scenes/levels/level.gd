@@ -40,10 +40,16 @@ func _on_player_player_use_granade(granade_start_pos, direction):
 	$Projectiles.add_child(granade)
 
 
-func _on_player_player_use_laser(laser_start_pos):
+func _on_player_player_use_laser(laser_start_pos, direction):
 	#crea istanza della scena
-	var laser = laser_scene.instantiate()
+	var laser = laser_scene.instantiate() as Area2D
 	#piazza l'istanza sulla posizione del marker scelto in $Player
-	laser.position =  laser_start_pos
+	laser.position = laser_start_pos
+	laser.local_laser_direction = direction #direzione sparo
+	
+	#ruota il laser all'angolazione della direzione
+	#rad_to_deg converte il valore numero in gradi
+	laser.rotation_degrees = rad_to_deg(direction.angle())
+	
 	#aggiungi l'istanza al node tree apposito
 	$Projectiles.add_child(laser)

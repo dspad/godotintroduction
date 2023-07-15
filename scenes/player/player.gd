@@ -8,7 +8,7 @@ var can_laser : bool = true
 var can_granade : bool = true
 
 #signals
-signal player_use_laser(laser_start_pos)
+signal player_use_laser(laser_start_pos, player_direction)
 signal player_use_granade(granade_start_pos, player_direction)
 
 # le azioni left, right, up, down, primary action e secondary action sono definite
@@ -45,9 +45,13 @@ func _process(delta):
 		var selected_marker = laser_markers[randi() % laser_markers.size()]
 		
 		can_laser = false
+		
+		#verifica dove sta guardando il player
+		var player_direction = (get_global_mouse_position() - position).normalized()
+		
 		#emetti il segnale inviando la posizione del marker2D da cui partirà il laser
 		#inviamo la global_position in quanto la position è relativa al suo parent
-		player_use_laser.emit(selected_marker.global_position)
+		player_use_laser.emit(selected_marker.global_position, player_direction)
 		$TimerLaser.start()
 	
 	if Input.is_action_pressed("secondary action") and can_granade:
