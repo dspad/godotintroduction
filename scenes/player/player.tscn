@@ -24,5 +24,17 @@ one_shot = true
 wait_time = 2.0
 one_shot = true
 
+[node name="LaserSpawner" type="Node2D" parent="."]
+position = Vector2(18, -124)
+
+[node name="Marker2D" type="Marker2D" parent="LaserSpawner"]
+position = Vector2(1, 0)
+
+[node name="Marker2D2" type="Marker2D" parent="LaserSpawner"]
+position = Vector2(-9, 2)
+
+[node name="Marker2D3" type="Marker2D" parent="LaserSpawner"]
+position = Vector2(10, 2)
+
 [connection signal="timeout" from="TimerLaser" to="." method="_on_timer_laser_timeout"]
 [connection signal="timeout" from="TimerGranade" to="." method="_on_timer_granade_timeout"]

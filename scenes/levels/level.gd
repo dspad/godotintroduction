@@ -1,5 +1,8 @@
 extends Node2D
 
+#variabile per creare istanze della scena
+var laser_scene : PackedScene = preload("res://scenes/projectile/laser.tscn")
+
 #func _ready():
 #	$Logo.rotation_degrees = 90
 	
@@ -28,5 +31,10 @@ func _on_player_player_use_granade():
 	print("player drops a granade")
 
 
-func _on_player_player_use_laser():
-	print("player shoots laser")
+func _on_player_player_use_laser(laser_start_pos):
+	#crea istanza della scena
+	var laser = laser_scene.instantiate()
+	#piazza l'istanza sulla posizione del marker scelto in $Player
+	laser.position =  laser_start_pos
+	#aggiungi l'istanza al node tree apposito
+	$Projectiles.add_child(laser)
