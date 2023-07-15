@@ -9,7 +9,7 @@ var can_granade : bool = true
 
 #signals
 signal player_use_laser(laser_start_pos)
-signal player_use_granade(granade_start_pos)
+signal player_use_granade(granade_start_pos, player_direction)
 
 # le azioni left, right, up, down, primary action e secondary action sono definite
 # all'interno del menu Project-> Project Settings -> Input Map
@@ -34,6 +34,9 @@ func _process(delta):
 	#aggiorna posiziione - vecchio codice
 	#position += direction * PLAYER_SPEED * delta
 	
+	#ruota il player verso la posizione del mouse
+	look_at(get_global_mouse_position())
+	
 	#controllo pressione azione
 	if Input.is_action_pressed("primary action") and can_laser:
 		#recuperiamo i marker2d e stabilire da dove apparirà il laser
@@ -49,8 +52,11 @@ func _process(delta):
 	
 	if Input.is_action_pressed("secondary action") and can_granade:
 		can_granade = false
+		#verifica dove sta guardando il player
+		var player_direction = (get_global_mouse_position() - position).normalized()
+		
 		#emetti il segnale inviando la posizione di partenza della granata
-		player_use_granade.emit($GranadeSpawner.global_position) 
+		player_use_granade.emit($GranadeSpawner.global_position, player_direction) 
 		$TimerGranade.start()
 
 
