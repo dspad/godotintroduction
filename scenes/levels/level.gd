@@ -24,8 +24,8 @@ func printAStringFromAnotherNode():
 	print("printAStringFromAnotherNode")
 
 
-func _on_gate_player_entered_gate():
-	print("player has entered gate")
+func _on_gate_player_entered_gate(object_name):
+	print(object_name + " has entered gate")
 
 
 func _on_player_player_use_granade(granade_start_pos, direction):

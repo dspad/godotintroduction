@@ -102,18 +102,18 @@ texture = ExtResource("8_6cmd3")
 [node name="Gate" parent="." instance=ExtResource("3_l6lf8")]
 position = Vector2(427, -494)
 
+[node name="Projectiles" type="Node2D" parent="."]
+
+[node name="House" parent="." instance=ExtResource("13_r02v1")]
+position = Vector2(-4005, 2766)
+rotation = 3.88336
+
 [node name="Player" parent="." instance=ExtResource("4_7dgrw")]
 position = Vector2(1035, 504)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(0.6, 0.6)
 position_smoothing_enabled = true
-
-[node name="Projectiles" type="Node2D" parent="."]
-
-[node name="House" parent="." instance=ExtResource("13_r02v1")]
-position = Vector2(-4005, 2766)
-rotation = 3.88336
 
 [connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]
 [connection signal="player_use_granade" from="Player" to="." method="_on_player_player_use_granade"]

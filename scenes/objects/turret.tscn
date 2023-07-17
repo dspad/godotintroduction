@@ -6,6 +6,8 @@
 size = Vector2(143, 223)
 
 [node name="Turret" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 11
 
 [node name="TurretSprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_vrrfb")
