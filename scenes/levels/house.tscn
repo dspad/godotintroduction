@@ -2,6 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://b41otrisp80ii" path="res://graphics/tilesets/interior.png" id="1_wibhl"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ejnr7"]
+size = Vector2(3282.5, 2080)
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pjjj8"]
 resource_name = "house"
 texture = ExtResource("1_wibhl")
@@ -177,11 +180,12 @@ physics_layer_0/collision_layer = 4
 physics_layer_0/collision_mask = 11
 sources/1 = SubResource("TileSetAtlasSource_pjjj8")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ejnr7"]
-size = Vector2(3282.5, 2080)
-
 [node name="House" type="Area2D"]
 collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-216.75, 395)
+shape = SubResource("RectangleShape2D_ejnr7")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_i12tr")
@@ -202,7 +206,3 @@ layer_2/y_sort_enabled = false
 layer_2/y_sort_origin = 0
 layer_2/z_index = 0
 layer_2/tile_data = PackedInt32Array(196608, 327681, 8, 131072, 65537, 6, 65536, 131073, 8, 0, 65537, 7, 65535, 196609, 8, 65534, 1, 7, 65532, 196609, 7, 65531, 262145, 7, 131068, 327681, 8, 196604, 327681, 6, 262140, 327681, 8, 196606, 327681, 6, 131070, 327681, 8, 262142, 327681, 8, -65540, 327681, 6, -65537, 327681, 6, 65537, 1, 6)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-216.75, 395)
-shape = SubResource("RectangleShape2D_ejnr7")

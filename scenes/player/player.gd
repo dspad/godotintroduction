@@ -52,6 +52,10 @@ func _process(delta):
 		#emetti il segnale inviando la posizione del marker2D da cui partirà il laser
 		#inviamo la global_position in quanto la position è relativa al suo parent
 		player_use_laser.emit(selected_marker.global_position, player_direction)
+		
+		#particle effect
+		$GPUParticles2D.set_emitting(true) 
+		
 		$TimerLaser.start()
 	
 	if Input.is_action_pressed("secondary action") and can_granade:
