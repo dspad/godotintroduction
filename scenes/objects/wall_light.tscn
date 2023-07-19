@@ -8,7 +8,7 @@ radius = 82.0
 height = 874.0
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_mniqo"]
-polygon = PackedVector2Array(204, -3, 198, 7, 199, 51, 209, 50, 213, 48, 213, 8, 210, -6)
+polygon = PackedVector2Array(200, -7, 199, 51, 209, 50, 208.848, 41.6411, 208, -5)
 
 [node name="WallLight" type="StaticBody2D"]
 
@@ -23,13 +23,13 @@ region_enabled = true
 region_rect = Rect2(-0.000244141, -1.00013, 862.663, 161.295)
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-color = Color(0, 0.894118, 0.898039, 1)
-energy = 8.31
+color = Color(0.458824, 0.52549, 0.933333, 1)
+energy = 8.0
 shadow_enabled = true
 shadow_filter = 2
 shadow_filter_smooth = 3.2
 texture = ExtResource("2_74ie2")
-texture_scale = 5.0
+texture_scale = 2.0
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource("OccluderPolygon2D_mniqo")
