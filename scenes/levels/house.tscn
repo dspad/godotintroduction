@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://b1n4nehbh183u"]
+[gd_scene load_steps=7 format=3 uid="uid://b1n4nehbh183u"]
 
 [ext_resource type="Texture2D" uid="uid://b41otrisp80ii" path="res://graphics/tilesets/interior.png" id="1_wibhl"]
 [ext_resource type="PackedScene" uid="uid://d0qe4gvr127n6" path="res://scenes/objects/simple_light.tscn" id="2_p57vf"]
+[ext_resource type="PackedScene" uid="uid://b8jrb1d4owx8" path="res://scenes/objects/wall_light.tscn" id="3_bfgeo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ejnr7"]
 size = Vector2(3282.5, 2080)
@@ -26,7 +27,7 @@ texture_region_size = Vector2i(390, 390)
 4:0/0 = 0
 4:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:0/0/physics_layer_0/angular_velocity = 0.0
-4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-195, 72, -195, -76, 195, -72, 195, 70)
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-195, -195, 195, -195, 195, 195, -195, 195)
 5:0/0 = 0
 5:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 5:0/0/physics_layer_0/angular_velocity = 0.0
@@ -211,3 +212,7 @@ layer_2/tile_data = PackedInt32Array(196608, 327681, 8, 131072, 65537, 6, 65536,
 [node name="SimpleLight" parent="." instance=ExtResource("2_p57vf")]
 position = Vector2(1287, 903)
 rotation = 1.5708
+
+[node name="WallLight" parent="SimpleLight" instance=ExtResource("3_bfgeo")]
+position = Vector2(-1349, 2056)
+rotation = -1.5708
