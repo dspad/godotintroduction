@@ -1,7 +1,8 @@
 extends CharacterBody2D
 
 #gestione input player
-const PLAYER_SPEED: int = 500
+@export var max_speed : int = 500
+var speed : int = max_speed
 
 #variabiles
 var can_laser : bool = true
@@ -28,7 +29,7 @@ func _process(delta):
 	#muovi il player in quanto CharacterBody2D. Su velocity si impostano i valori direzionali
 	#che vengono poi usati in move_and_slide.
 	#Non si aggiunge il delta perchè viene usato direttamente in move_and_slide
-	velocity = direction * PLAYER_SPEED
+	velocity = direction * speed
 	move_and_slide()
 	
 	#aggiorna posiziione - vecchio codice
