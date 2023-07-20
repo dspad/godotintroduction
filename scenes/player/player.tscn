@@ -46,19 +46,19 @@ one_shot = true
 position = Vector2(18, -124)
 
 [node name="Marker2D" type="Marker2D" parent="LaserSpawner"]
-position = Vector2(105, 141)
+position = Vector2(119, 148)
 
 [node name="Marker2D2" type="Marker2D" parent="LaserSpawner"]
-position = Vector2(103, 134)
+position = Vector2(112, 135)
 
 [node name="Marker2D3" type="Marker2D" parent="LaserSpawner"]
-position = Vector2(102, 153)
+position = Vector2(108, 158)
 
 [node name="GranadeSpawner" type="Node2D" parent="."]
-position = Vector2(132, 22)
+position = Vector2(138, 26)
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
-position = Vector2(127, 18)
+position = Vector2(131, 22)
 emitting = false
 process_material = SubResource("ParticleProcessMaterial_htqjm")
 texture = ExtResource("3_re1aq")
