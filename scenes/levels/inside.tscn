@@ -1,6 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://b2rr1fp2dgcfu"]
+[gd_scene load_steps=5 format=3 uid="uid://b2rr1fp2dgcfu"]
 
 [ext_resource type="PackedScene" uid="uid://52ntcq5yao3i" path="res://scenes/levels/level.tscn" id="1_8vbp7"]
+[ext_resource type="Script" path="res://scenes/levels/inside.gd" id="2_2sri1"]
+[ext_resource type="PackedScene" uid="uid://cpo6qoo3ijfy" path="res://scenes/objects/box.tscn" id="2_440pm"]
+[ext_resource type="PackedScene" uid="uid://c8pdqrogx5fpn" path="res://scenes/objects/toilet.tscn" id="3_ta5xk"]
 
 [node name="Inside" instance=ExtResource("1_8vbp7")]
-script = null
+script = ExtResource("2_2sri1")
+
+[node name="Box" parent="." index="5" instance=ExtResource("2_440pm")]
+position = Vector2(427, 176)
+
+[node name="Toilet" parent="." index="6" instance=ExtResource("3_ta5xk")]
+position = Vector2(1249, 213)
