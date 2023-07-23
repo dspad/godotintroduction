@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://52ntcq5yao3i"]
+[gd_scene load_steps=4 format=3 uid="uid://52ntcq5yao3i"]
 
 [ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_tny74"]
 [ext_resource type="PackedScene" uid="uid://lglyajmu3iqw" path="res://scenes/player/player.tscn" id="4_7dgrw"]
 [ext_resource type="PackedScene" uid="uid://b1n4nehbh183u" path="res://scenes/levels/house.tscn" id="13_r02v1"]
-[ext_resource type="PackedScene" uid="uid://dtsx02l3x3xxi" path="res://scenes/objects/light_fan_animation.tscn" id="15_iemks"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_tny74")
@@ -16,17 +15,14 @@ script = ExtResource("1_tny74")
 position = Vector2(1035, 504)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(0.6, 0.6)
+zoom = Vector2(0.4, 0.4)
 position_smoothing_enabled = true
-
-[node name="LightFanAnimation" parent="." instance=ExtResource("15_iemks")]
-position = Vector2(-3932, 1647)
-frame = 32
-frame_progress = 0.762364
 
 [node name="House" parent="." instance=ExtResource("13_r02v1")]
 position = Vector2(-4005, 2766)
 rotation = -2.39983
+
+[node name="Lights" type="Node2D" parent="."]
 
 [connection signal="player_use_granade" from="Player" to="." method="_on_player_player_use_granade"]
 [connection signal="player_use_laser" from="Player" to="." method="_on_player_player_use_laser"]
