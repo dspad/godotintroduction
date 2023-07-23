@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://52ntcq5yao3i"]
+[gd_scene load_steps=5 format=3 uid="uid://52ntcq5yao3i"]
 
 [ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_tny74"]
+[ext_resource type="PackedScene" uid="uid://dtur0umqkxklq" path="res://scenes/UI/ui.tscn" id="4_6sgmm"]
 [ext_resource type="PackedScene" uid="uid://lglyajmu3iqw" path="res://scenes/player/player.tscn" id="4_7dgrw"]
 [ext_resource type="PackedScene" uid="uid://b1n4nehbh183u" path="res://scenes/levels/house.tscn" id="13_r02v1"]
 
@@ -23,6 +24,8 @@ position = Vector2(-4005, 2766)
 rotation = -2.39983
 
 [node name="Lights" type="Node2D" parent="."]
+
+[node name="UI" parent="." instance=ExtResource("4_6sgmm")]
 
 [connection signal="player_use_granade" from="Player" to="." method="_on_player_player_use_granade"]
 [connection signal="player_use_laser" from="Player" to="." method="_on_player_player_use_laser"]
