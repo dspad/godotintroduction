@@ -18,7 +18,6 @@ signal player_use_granade(granade_start_pos, player_direction)
 func _ready():
 	#esempip di utilizz di $".." per chiamare il nodo padre
 	$"..".printAStringFromAnotherNode()
-	
 
 func _process(delta):
 	
@@ -39,7 +38,10 @@ func _process(delta):
 	look_at(get_global_mouse_position())
 	
 	#controllo pressione azione
-	if Input.is_action_pressed("primary action") and can_laser:
+	#lettura variabile da Globals
+	if Input.is_action_pressed("primary action") and can_laser and Globals.laser_amount > 0:
+		Globals.laser_amount -= 1
+		
 		#recuperiamo i marker2d e stabilire da dove apparirà il laser
 		var laser_markers = $LaserSpawner.get_children()
 		#scegli a caso uno dei marker2d

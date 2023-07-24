@@ -51,6 +51,9 @@ func _on_player_player_use_laser(laser_start_pos, direction):
 	
 	#aggiungi l'istanza al node tree apposito
 	$Projectiles.add_child(laser)
+	
+	#aggiorna counter UI laer
+	$UI.update_laser_text()
 
 
 func _on_house_player_entered():
