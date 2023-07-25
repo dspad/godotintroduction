@@ -36,6 +36,9 @@ func _on_player_player_use_granade(granade_start_pos, direction):
 	granade.linear_velocity = direction * granade.GRANADE_SPEED
 	
 	$Projectiles.add_child(granade)
+	
+	#aggiorna counter UI laer
+	$UI.update_grenade_text()
 
 
 func _on_player_player_use_laser(laser_start_pos, direction):

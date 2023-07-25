@@ -61,7 +61,8 @@ func _process(delta):
 		
 		$TimerLaser.start()
 	
-	if Input.is_action_pressed("secondary action") and can_granade:
+	if Input.is_action_pressed("secondary action") and can_granade and Globals.grenade_amont > 0:
+		Globals.grenade_amont -= 1
 		can_granade = false
 		#verifica dove sta guardando il player
 		var player_direction = (get_global_mouse_position() - position).normalized()
