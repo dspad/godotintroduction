@@ -7,8 +7,10 @@ func _on_gate_player_entered_gate(object_name):
 	
 	#caricamento della scena inside
 	#modalità di caricamento inserendo direttamente il percorso della scena
-	get_tree().change_scene_to_file("res://scenes/levels/inside.tscn")
+	#get_tree().change_scene_to_file("res://scenes/levels/inside.tscn")
 
+	#invoco l'animazione di transizione e dico quale scena deve caricare
+	TransitionLayer.change_scene("res://scenes/levels/inside.tscn")
 
 func _on_button_pressed():
 	print("button is pressed")
