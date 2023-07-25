@@ -17,8 +17,17 @@ func _ready():
 func update_laser_text():
 	#converti in stringa
 	laser_label.text = str(Globals.laser_amount)
-	laser_label.modulate = green_color
+	update_color(Globals.laser_amount, laser_label, laser_icon)
 
 func update_grenade_text():
 	grenade_label.text = str(Globals.grenade_amont)
 	grenade_label.modulate = red_color
+	update_color(Globals.grenade_amont, grenade_label, grenade_icon)
+	
+func update_color(amount : int, label : Label,  icon : TextureRect):
+	if amount == 0:
+		label.modulate = red_color
+		icon.modulate = red_color
+	else:
+		label.modulate = green_color
+		icon.modulate = green_color
