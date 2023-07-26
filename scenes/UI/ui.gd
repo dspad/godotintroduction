@@ -21,7 +21,6 @@ func update_laser_text():
 
 func update_grenade_text():
 	grenade_label.text = str(Globals.grenade_amont)
-	grenade_label.modulate = red_color
 	update_color(Globals.grenade_amont, grenade_label, grenade_icon)
 	
 func update_color(amount : int, label : Label,  icon : TextureRect):

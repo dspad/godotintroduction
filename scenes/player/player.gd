@@ -11,6 +11,8 @@ var can_granade : bool = true
 #signals
 signal player_use_laser(laser_start_pos, player_direction)
 signal player_use_granade(granade_start_pos, player_direction)
+signal update_stats
+
 
 # le azioni left, right, up, down, primary action e secondary action sono definite
 # all'interno del menu Project-> Project Settings -> Input Map
@@ -77,3 +79,12 @@ func _on_timer_laser_timeout():
 
 func _on_timer_granade_timeout():
 	can_granade = true
+
+func add_item(item_type):
+	if item_type == "laser":
+		Globals.laser_amount += 5
+	elif item_type == "grenade":
+		Globals.grenade_amont += 1
+	elif item_type == "health":
+		$Sprite2D.modulate = Color(.1,.6,.1)
+	update_stats.emit()

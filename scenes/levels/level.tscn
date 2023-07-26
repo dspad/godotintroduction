@@ -29,5 +29,6 @@ rotation = -2.39983
 
 [connection signal="player_use_granade" from="Player" to="." method="_on_player_player_use_granade"]
 [connection signal="player_use_laser" from="Player" to="." method="_on_player_player_use_laser"]
+[connection signal="update_stats" from="Player" to="." method="_on_player_update_stats"]
 [connection signal="player_entered" from="House" to="." method="_on_house_player_entered"]
 [connection signal="player_exited" from="House" to="." method="_on_house_player_exited"]
