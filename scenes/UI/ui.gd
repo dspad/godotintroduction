@@ -9,10 +9,16 @@ var red_color : Color = Color(1,0,0,1)
 @onready var grenade_label : Label = $GrenadeCounter/VBoxContainer/Label
 @onready var laser_icon : TextureRect = $LaserCounter/Bullets/TextureRect
 @onready var grenade_icon : TextureRect = $GrenadeCounter/VBoxContainer/TextureRect
+@onready var health_bar : TextureProgressBar = $MarginContainer/TextureProgressBar
 
 func _ready():
+	#essempio di connessione a un signal via codice (da fare quando il signal è su una scena o script globale)
+	#quando si emette il signal "health_changed" si esegue la funzione update_health_text
+	Globals.connect("health_changed", update_health_text)
 	update_laser_text()
 	update_grenade_text()
+	#inizializza barra col valore che c'è in globals
+	health_bar.value = Globals.health_amout
 
 func update_laser_text():
 	#converti in stringa
@@ -22,6 +28,10 @@ func update_laser_text():
 func update_grenade_text():
 	grenade_label.text = str(Globals.grenade_amont)
 	update_color(Globals.grenade_amont, grenade_label, grenade_icon)
+	
+func update_health_text():
+	#aggiorna la progress bar
+	health_bar.value = Globals.health_amout
 	
 func update_color(amount : int, label : Label,  icon : TextureRect):
 	if amount == 0:

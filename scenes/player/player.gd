@@ -86,5 +86,5 @@ func add_item(item_type):
 	elif item_type == "grenade":
 		Globals.grenade_amont += 1
 	elif item_type == "health":
-		$Sprite2D.modulate = Color(.1,.6,.1)
+		Globals.health_amout += 10
 	update_stats.emit()
