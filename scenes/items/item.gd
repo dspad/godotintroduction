@@ -22,7 +22,10 @@ func _process(delta):
 
 
 func _on_body_entered(body):
-	#in collision abbiamo impostato che solo il player può collidere con l'item
-	#nel player è presente il metodo add_item()
-	body.add_item(item_type) 
+	if item_type == "laser":
+		Globals.laser_amount += 5
+	elif item_type == "grenade":
+		Globals.grenade_amount += 1
+	elif item_type == "health":
+		Globals.health_amount += 10
 	queue_free()

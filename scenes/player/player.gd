@@ -11,7 +11,7 @@ var can_granade : bool = true
 #signals
 signal player_use_laser(laser_start_pos, player_direction)
 signal player_use_granade(granade_start_pos, player_direction)
-signal update_stats
+#signal update_stats
 
 
 # le azioni left, right, up, down, primary action e secondary action sono definite
@@ -63,8 +63,8 @@ func _process(delta):
 		
 		$TimerLaser.start()
 	
-	if Input.is_action_pressed("secondary action") and can_granade and Globals.grenade_amont > 0:
-		Globals.grenade_amont -= 1
+	if Input.is_action_pressed("secondary action") and can_granade and Globals.grenade_amount > 0:
+		Globals.grenade_amount -= 1
 		can_granade = false
 		#verifica dove sta guardando il player
 		var player_direction = (get_global_mouse_position() - position).normalized()
@@ -79,12 +79,3 @@ func _on_timer_laser_timeout():
 
 func _on_timer_granade_timeout():
 	can_granade = true
-
-func add_item(item_type):
-	if item_type == "laser":
-		Globals.laser_amount += 5
-	elif item_type == "grenade":
-		Globals.grenade_amont += 1
-	elif item_type == "health":
-		Globals.health_amout += 10
-	update_stats.emit()
