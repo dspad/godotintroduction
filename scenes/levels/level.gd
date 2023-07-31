@@ -5,8 +5,20 @@ class_name LevelParent #nome riconoscibile della classe
 #variabile per creare istanze della scena
 var laser_scene : PackedScene = preload("res://scenes/projectile/laser.tscn")
 var granade_scene : PackedScene = preload("res://scenes/projectile/granade.tscn")
+var item_scene: PackedScene = preload("res://scenes/items/item.tscn")
 
-#func _ready():
+func _ready():
+	#recupera i nodi appartenenti al gruppo Container
+	for container in get_tree().get_nodes_in_group("Container"):
+		container.connect("open", _on_container_opened)
+
+func _on_container_opened(pos, direction):
+	#all'apertura del container, crea un istanza dell'item
+	var item = item_scene.instantiate()
+	item.position = pos
+	item.direction = direction
+	$Items.call_deferred("add_child", item)
+	
 #	$Logo.rotation_degrees = 90
 	
 	#esempio accesso a un nodo usando nome univoco

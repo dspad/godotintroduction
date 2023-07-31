@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://48epphfdbc5l"]
+
+[ext_resource type="PackedScene" uid="uid://d15mpawqx5g06" path="res://scenes/enemies/drone.tscn" id="1_xjakv"]
+
+[node name="Exercise2" type="Node2D"]
+
+[node name="Drone" parent="." instance=ExtResource("1_xjakv")]
