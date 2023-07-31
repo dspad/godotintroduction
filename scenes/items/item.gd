@@ -23,7 +23,9 @@ func _ready():
 	#tween
 	var target_pos = position + direction * distance
 	var movement_tween = create_tween()
+	movement_tween.set_parallel(true)
 	movement_tween.tween_property(self, "position", target_pos, 0.5)
+	movement_tween.tween_property(self, "scale", Vector2(1,1), 0.3).from(Vector2(0,0))
 
 func _process(delta):
 	rotation += rotation_speed * delta
