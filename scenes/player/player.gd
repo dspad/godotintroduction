@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 #gestione input player
-@export var max_speed : int = 500
+@export var max_speed : int = 1000
 var speed : int = max_speed
 
 #variabiles

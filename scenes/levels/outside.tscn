@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://yxjfqjmov0k1"]
+[gd_scene load_steps=17 format=3 uid="uid://yxjfqjmov0k1"]
 
 [ext_resource type="PackedScene" uid="uid://52ntcq5yao3i" path="res://scenes/levels/level.tscn" id="1_hg6ei"]
 [ext_resource type="Script" path="res://scenes/levels/outside.gd" id="2_0toh2"]
@@ -13,9 +13,6 @@
 [ext_resource type="Texture2D" uid="uid://bbm5668jntnyv" path="res://graphics/decals/moss/moss_3.png" id="9_vk8l2"]
 [ext_resource type="Texture2D" uid="uid://chn02joypyrqd" path="res://graphics/decals/moss/moss_5.png" id="10_8n661"]
 [ext_resource type="PackedScene" uid="uid://6wlkxqgfiq3j" path="res://scenes/objects/steam_vent.tscn" id="11_761v0"]
-[ext_resource type="PackedScene" uid="uid://b76v6iau1a64g" path="res://scenes/items/item.tscn" id="14_co8jj"]
-[ext_resource type="PackedScene" uid="uid://ci0e43kn2ryts" path="res://scenes/objects/crate.tscn" id="15_8pvbr"]
-[ext_resource type="PackedScene" uid="uid://c8pdqrogx5fpn" path="res://scenes/objects/toilet.tscn" id="16_mvwmm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rmr7a"]
 resource_name = "walls"
@@ -103,26 +100,8 @@ texture = ExtResource("10_8n661")
 [node name="SteamVent" parent="Ground" index="8" instance=ExtResource("11_761v0")]
 position = Vector2(-827, 969)
 
-[node name="Crate" parent="." index="1" instance=ExtResource("15_8pvbr")]
-position = Vector2(1409, 935)
-
-[node name="Crate2" parent="." index="2" instance=ExtResource("15_8pvbr")]
-position = Vector2(-212, 804)
-rotation = 1.5708
-
-[node name="Crate3" parent="." index="3" instance=ExtResource("15_8pvbr")]
-position = Vector2(323, 1028)
-
-[node name="Crate4" parent="." index="4" instance=ExtResource("15_8pvbr")]
-position = Vector2(832, 1008)
-
-[node name="Toilet" parent="." index="5" instance=ExtResource("16_mvwmm")]
-position = Vector2(1514, 496)
-
-[node name="Gate" parent="." index="10" instance=ExtResource("2_x4ilt")]
+[node name="Gate" parent="." index="5" instance=ExtResource("2_x4ilt")]
+z_index = 1
 position = Vector2(248, -690)
-
-[node name="Item" parent="." index="12" instance=ExtResource("14_co8jj")]
-position = Vector2(368, 376)
 
 [connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]

@@ -48,10 +48,6 @@ func _on_player_player_use_granade(granade_start_pos, direction):
 	granade.linear_velocity = direction * granade.GRANADE_SPEED
 	
 	$Projectiles.add_child(granade)
-	
-	#aggiorna counter UI laer
-	$UI.update_grenade_text()
-
 
 func _on_player_player_use_laser(laser_start_pos, direction):
 	#crea istanza della scena
@@ -66,35 +62,3 @@ func _on_player_player_use_laser(laser_start_pos, direction):
 	
 	#aggiungi l'istanza al node tree apposito
 	$Projectiles.add_child(laser)
-	
-	#aggiorna counter UI laer
-	$UI.update_laser_text()
-
-
-func _on_house_player_entered():
-	#esempio di utilizzo di un tween
-	var tween = get_tree().create_tween()
-	#un tween esegue una interpolazione del valore di una proprietà verso un altro valore
-	#in un arco di tempo specifico. E' utile per fare animazioni basilari senza dover usare un
-	#AnimationPlayer
-	#parametri: nodo da elaborare, proprietà da aggiornare, il nuovo valore, il tempo impiegato
-	#tween.tween_property($Player/Camera2D,"zoom", Vector2(1,1), 0.5)
-	
-	#se con uno stesso tween si eseguono più animazioni, queste avvengono in sequenza e non in parallelo
-	#cambiando la proprietà parallel a true, le animazioni avvengono in contemporanea
-	tween.set_parallel(true)
-	
-	#è possibile anche indicare un valore di partenza della proprietà elaborata dal tween
-	tween.tween_property($Player, "modulate:a",0, 2).from(0.5)
-	#è possibile indicare una tipologia di transizione (di default l'interpolazione è lineare)
-	tween.tween_property($Player/Camera2D,"zoom", Vector2(1,1), 0.5).set_trans(Tween.TRANS_QUAD)
-	
-
-func _on_house_player_exited():
-	var tween = get_tree().create_tween()
-	tween.tween_property($Player/Camera2D,"zoom", Vector2(0.6,0.6), 0.5)
-
-
-func _on_player_update_stats():
-	$UI.update_laser_text()
-	$UI.update_grenade_text()
