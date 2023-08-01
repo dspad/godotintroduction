@@ -72,6 +72,9 @@ func _process(delta):
 		#emetti il segnale inviando la posizione di partenza della granata
 		player_use_granade.emit($GranadeSpawner.global_position, player_direction) 
 		$TimerGranade.start()
+	
+	#memorizza la posizione corrente del player
+	Globals.player_pos = global_position
 
 
 func _on_timer_laser_timeout():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://yxjfqjmov0k1"]
+[gd_scene load_steps=18 format=3 uid="uid://yxjfqjmov0k1"]
 
 [ext_resource type="PackedScene" uid="uid://52ntcq5yao3i" path="res://scenes/levels/level.tscn" id="1_hg6ei"]
 [ext_resource type="Script" path="res://scenes/levels/outside.gd" id="2_0toh2"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bbm5668jntnyv" path="res://graphics/decals/moss/moss_3.png" id="9_vk8l2"]
 [ext_resource type="Texture2D" uid="uid://chn02joypyrqd" path="res://graphics/decals/moss/moss_5.png" id="10_8n661"]
 [ext_resource type="PackedScene" uid="uid://6wlkxqgfiq3j" path="res://scenes/objects/steam_vent.tscn" id="11_761v0"]
+[ext_resource type="PackedScene" uid="uid://bdx2c6cdcp06q" path="res://scenes/enemies/scout.tscn" id="14_dlobp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rmr7a"]
 resource_name = "walls"
@@ -103,5 +104,11 @@ position = Vector2(-827, 969)
 [node name="Gate" parent="." index="5" instance=ExtResource("2_x4ilt")]
 z_index = 1
 position = Vector2(248, -690)
+
+[node name="Scout" parent="Enemies" index="0" instance=ExtResource("14_dlobp")]
+position = Vector2(217, 459)
+
+[node name="Lights" parent="." index="9"]
+metadata/_edit_lock_ = true
 
 [connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]

@@ -12,6 +12,10 @@ func _ready():
 	for container in get_tree().get_nodes_in_group("Container"):
 		container.connect("open", _on_container_opened)
 
+	#recupera i nodi appartenenti al gruppo Scouts
+	for container in get_tree().get_nodes_in_group("Scouts"):
+		container.connect("laser", _on_scout_laser)
+
 func _on_container_opened(pos, direction):
 	#all'apertura del container, crea un istanza dell'item
 	var item = item_scene.instantiate()
@@ -50,6 +54,9 @@ func _on_player_player_use_granade(granade_start_pos, direction):
 	$Projectiles.add_child(granade)
 
 func _on_player_player_use_laser(laser_start_pos, direction):
+	create_laser(laser_start_pos, direction)
+
+func create_laser(laser_start_pos, direction):
 	#crea istanza della scena
 	var laser = laser_scene.instantiate() as Area2D
 	#piazza l'istanza sulla posizione del marker scelto in $Player
@@ -62,3 +69,6 @@ func _on_player_player_use_laser(laser_start_pos, direction):
 	
 	#aggiungi l'istanza al node tree apposito
 	$Projectiles.add_child(laser)
+
+func _on_scout_laser(pos, direction):
+	create_laser(pos, direction)
