@@ -5,6 +5,7 @@ var player_nearby : bool = false
 var can_laser : bool = true
 var right_gun_user : bool = true
 var scout_health : int = 30
+var scout_hitted : bool = false
 
 
 signal laser(pos, direction)
@@ -19,7 +20,7 @@ func _process(delta):
 			var direction : Vector2 = (Globals.player_pos - position).normalized()
 			laser.emit(pos,direction)
 			can_laser = false
-			$LaserCooldown.start()
+			$Timers/LaserCooldown.start()
 
 
 func _on_attack_area_body_entered(body):
@@ -34,6 +35,12 @@ func _on_laser_cooldown_timeout():
 	can_laser = true
 
 func hit():
-	scout_health -= 10
-	if scout_health <= 0:
-		queue_free()
+	if not scout_hitted:
+		scout_hitted = true
+		scout_health -= 10
+		$Timers/HitTimer.start()
+		if scout_health <= 0:
+			queue_free()
+
+func _on_hit_timer_timeout():
+	scout_hitted = false
