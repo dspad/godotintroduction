@@ -7,6 +7,7 @@ var speed : int = max_speed
 #variabiles
 var can_laser : bool = true
 var can_granade : bool = true
+var player_hitted : bool = false
 
 #signals
 signal player_use_laser(laser_start_pos, player_direction)
@@ -21,7 +22,7 @@ func _ready():
 	#esempip di utilizz di $".." per chiamare il nodo padre
 	$"..".printAStringFromAnotherNode()
 
-func _process(delta):
+func _process(_delta):
 	
 	#Gets an input vector by specifying four actions for the positive and negative X and Y axes.
 	var direction = Input.get_vector("left", "right", "up", "down")
@@ -85,4 +86,4 @@ func _on_timer_granade_timeout():
 
 
 func hit():
-	print("player was hit")
+	Globals.health_amount -= 10
