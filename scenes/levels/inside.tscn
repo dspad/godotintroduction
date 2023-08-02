@@ -427,59 +427,67 @@ rotation = 3.14159
 position = Vector2(-604, 2379)
 rotation = 3.14159
 
-[node name="Crate7" parent="." index="24" instance=ExtResource("16_bxldm")]
+[node name="Crate8" parent="." index="24" instance=ExtResource("16_bxldm")]
+position = Vector2(-115, 2376)
+rotation = 3.14159
+
+[node name="Crate9" parent="." index="25" instance=ExtResource("16_bxldm")]
+position = Vector2(-1068, 2384)
+rotation = 3.14159
+
+[node name="Crate7" parent="." index="26" instance=ExtResource("16_bxldm")]
 position = Vector2(5692, 445)
 rotation = 3.14159
 
-[node name="Crate2" parent="." index="25" instance=ExtResource("16_bxldm")]
+[node name="Crate2" parent="." index="27" instance=ExtResource("16_bxldm")]
 position = Vector2(4427, -1494)
 rotation = 3.14159
 
-[node name="Crate3" parent="." index="26" instance=ExtResource("16_bxldm")]
+[node name="Crate3" parent="." index="28" instance=ExtResource("16_bxldm")]
 position = Vector2(1851, -2390)
 
-[node name="Crate4" parent="." index="27" instance=ExtResource("16_bxldm")]
+[node name="Crate4" parent="." index="29" instance=ExtResource("16_bxldm")]
 position = Vector2(2849, -3327)
 
-[node name="Crate5" parent="." index="28" instance=ExtResource("16_bxldm")]
+[node name="Crate5" parent="." index="30" instance=ExtResource("16_bxldm")]
 position = Vector2(334, -4397)
 rotation = 1.5708
 
-[node name="Crate6" parent="." index="29" instance=ExtResource("16_bxldm")]
+[node name="Crate6" parent="." index="31" instance=ExtResource("16_bxldm")]
 position = Vector2(-996, -4216)
 rotation = 3.14159
 
-[node name="SteamVent" parent="." index="30" instance=ExtResource("16_nsp7y")]
+[node name="SteamVent" parent="." index="32" instance=ExtResource("16_nsp7y")]
 position = Vector2(5584, -904)
 
-[node name="SteamVent2" parent="." index="31" instance=ExtResource("16_nsp7y")]
+[node name="SteamVent2" parent="." index="33" instance=ExtResource("16_nsp7y")]
 position = Vector2(4238, -1199)
 
-[node name="SteamVent3" parent="." index="32" instance=ExtResource("16_nsp7y")]
+[node name="SteamVent3" parent="." index="34" instance=ExtResource("16_nsp7y")]
 position = Vector2(3624, -2046)
 
-[node name="SteamVent4" parent="." index="33" instance=ExtResource("16_nsp7y")]
+[node name="SteamVent4" parent="." index="35" instance=ExtResource("16_nsp7y")]
 position = Vector2(494, -2336)
 
-[node name="SteamVent5" parent="." index="34" instance=ExtResource("16_nsp7y")]
+[node name="SteamVent5" parent="." index="36" instance=ExtResource("16_nsp7y")]
 position = Vector2(356, -3896)
 
-[node name="SteamVent6" parent="." index="35" instance=ExtResource("16_nsp7y")]
+[node name="SteamVent6" parent="." index="37" instance=ExtResource("16_nsp7y")]
 position = Vector2(-1989, -3925)
 
-[node name="SteamVent7" parent="." index="36" instance=ExtResource("16_nsp7y")]
+[node name="SteamVent7" parent="." index="38" instance=ExtResource("16_nsp7y")]
 position = Vector2(-2312, -2113)
 
-[node name="SteamVent8" parent="." index="37" instance=ExtResource("16_nsp7y")]
+[node name="SteamVent8" parent="." index="39" instance=ExtResource("16_nsp7y")]
 position = Vector2(-4709, -1523)
 
-[node name="SteamVent9" parent="." index="38" instance=ExtResource("16_nsp7y")]
+[node name="SteamVent9" parent="." index="40" instance=ExtResource("16_nsp7y")]
 position = Vector2(-1949, 508)
 
-[node name="SteamVent10" parent="." index="39" instance=ExtResource("16_nsp7y")]
+[node name="SteamVent10" parent="." index="41" instance=ExtResource("16_nsp7y")]
 position = Vector2(885, 513)
 
-[node name="Player" parent="." index="40"]
+[node name="Player" parent="." index="42"]
 position = Vector2(6508, -209)
 
 [node name="PointLight2D" type="PointLight2D" parent="Player" index="9"]
@@ -487,7 +495,7 @@ energy = 2.59
 texture = ExtResource("5_5ltxq")
 texture_scale = 2.17
 
-[node name="Lights" parent="." index="41"]
+[node name="Lights" parent="." index="43"]
 metadata/_edit_lock_ = true
 
 [node name="LightFanAnimation" parent="Lights" index="0" instance=ExtResource("5_fd3ts")]
