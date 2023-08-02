@@ -4,6 +4,8 @@ extends CharacterBody2D
 var player_nearby : bool = false
 var can_laser : bool = true
 var right_gun_user : bool = true
+var scout_health : int = 30
+
 
 signal laser(pos, direction)
 
@@ -32,4 +34,6 @@ func _on_laser_cooldown_timeout():
 	can_laser = true
 
 func hit():
-	print("scout was hit")
+	scout_health -= 10
+	if scout_health <= 0:
+		queue_free()
