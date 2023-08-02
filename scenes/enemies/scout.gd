@@ -12,7 +12,6 @@ func _process(delta):
 		#ruota la direzione verso la posizione del player
 		look_at(Globals.player_pos)
 		if can_laser:
-			print("attack")
 			var pos : Vector2 = $LaserSpawnPositions.get_child(right_gun_user).global_position
 			right_gun_user = not right_gun_user
 			var direction : Vector2 = (Globals.player_pos - position).normalized()
@@ -31,3 +30,6 @@ func _on_attack_area_body_exited(body):
 
 func _on_laser_cooldown_timeout():
 	can_laser = true
+
+func hit():
+	print("scout was hit")

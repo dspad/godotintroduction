@@ -82,3 +82,7 @@ func _on_timer_laser_timeout():
 
 func _on_timer_granade_timeout():
 	can_granade = true
+
+
+func hit():
+	print("player was hit")
