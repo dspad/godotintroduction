@@ -39,8 +39,11 @@ func hit():
 		scout_hitted = true
 		scout_health -= 10
 		$Timers/HitTimer.start()
+		#imposta il parametro dello shader a 1
+		$Sprite2D.material.set_shader_parameter("progress",1)
 		if scout_health <= 0:
 			queue_free()
 
 func _on_hit_timer_timeout():
 	scout_hitted = false
+	$Sprite2D.material.set_shader_parameter("progress",0)
