@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bbm5668jntnyv" path="res://graphics/decals/moss/moss_3.png" id="9_vk8l2"]
 [ext_resource type="Texture2D" uid="uid://chn02joypyrqd" path="res://graphics/decals/moss/moss_5.png" id="10_8n661"]
 [ext_resource type="PackedScene" uid="uid://6wlkxqgfiq3j" path="res://scenes/objects/steam_vent.tscn" id="11_761v0"]
-[ext_resource type="PackedScene" uid="uid://cxql7h3ewvl86" path="res://scenes/enemies/bug.tscn" id="14_ilfim"]
+[ext_resource type="PackedScene" uid="uid://d15mpawqx5g06" path="res://scenes/enemies/drone.tscn" id="14_gxyaq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rmr7a"]
 resource_name = "walls"
@@ -154,8 +154,8 @@ position = Vector2(-827, 969)
 z_index = 1
 position = Vector2(248, -690)
 
-[node name="Bug" parent="Enemies" index="0" instance=ExtResource("14_ilfim")]
-position = Vector2(159, 545)
+[node name="Drone" parent="Enemies" index="0" instance=ExtResource("14_gxyaq")]
+position = Vector2(-86, 718)
 
 [node name="Lights" parent="." index="9"]
 metadata/_edit_lock_ = true
