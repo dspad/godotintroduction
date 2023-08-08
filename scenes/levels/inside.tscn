@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://b2rr1fp2dgcfu"]
+[gd_scene load_steps=29 format=3 uid="uid://b2rr1fp2dgcfu"]
 
 [ext_resource type="PackedScene" uid="uid://52ntcq5yao3i" path="res://scenes/levels/level.tscn" id="1_8vbp7"]
 [ext_resource type="Script" path="res://scenes/levels/inside.gd" id="2_2sri1"]
@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://c8pdqrogx5fpn" path="res://scenes/objects/toilet.tscn" id="15_7thb3"]
 [ext_resource type="Texture2D" uid="uid://nnw620xo3vkm" path="res://graphics/objects/infestation/spikes.png" id="15_rdhhd"]
 [ext_resource type="PackedScene" uid="uid://ci0e43kn2ryts" path="res://scenes/objects/crate.tscn" id="16_bxldm"]
+[ext_resource type="PackedScene" uid="uid://d15mpawqx5g06" path="res://scenes/enemies/drone.tscn" id="16_eabvv"]
 [ext_resource type="PackedScene" uid="uid://6wlkxqgfiq3j" path="res://scenes/objects/steam_vent.tscn" id="16_nsp7y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xt8bp"]
@@ -372,6 +373,9 @@ shape = SubResource("RectangleShape2D_xt8bp")
 
 [node name="House" parent="." index="7"]
 position = Vector2(-15484, 4956)
+
+[node name="Drone" parent="Enemies" index="0" instance=ExtResource("16_eabvv")]
+position = Vector2(4319, -272)
 
 [node name="Bed" parent="." index="9" instance=ExtResource("14_u8kjp")]
 position = Vector2(5145, -1737)
